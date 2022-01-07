@@ -1,0 +1,24 @@
+{
+    "name": "dionfei/html-strip",
+    "description": "html标签过滤 内容替换",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Dinofei\\HtmlStrip\\": "src/",
+            "Dinofei\\Test\\": "test"
+        }
+    },
+    "authors": [
+        {
+            "name": "dinofei",
+            "email": "1056593544@qq.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
