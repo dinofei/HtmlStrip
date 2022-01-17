@@ -35,6 +35,7 @@ class Strip
         '™',
         '&times;',
         '&divide;',
+        '.'
     ];
 
     protected string $ignoreRule;
