@@ -26,7 +26,7 @@ class Main
 
     public function replace(array $cases) :string
     {
-        $this->newCases = $cases;
+        $this->newCases = $this->withSortCases($cases);
 
         $this->setOutput();
 
@@ -39,7 +39,7 @@ class Main
 
         $cases = $this->strip->parse($this->origin);
 
-        $this->buildCases($cases);
+        $this->buildCases($this->withSortCases($cases));
 
         $this->setSkeleton();
 
@@ -74,6 +74,22 @@ class Main
     public function getOrigin(): string
     {
         return $this->origin;
+    }
+
+    protected function withSortCases($arr) :array
+    {
+        $sortMap = array_map(function ($item) {
+            return strlen($item);
+        }, $arr);
+        arsort($sortMap);
+
+        $newCases = [];
+
+        foreach ($sortMap as $k => $v) {
+            $newCases[$k] = $arr[$k];
+        }
+
+        return $newCases;
     }
 
 }
