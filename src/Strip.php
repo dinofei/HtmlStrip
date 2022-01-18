@@ -40,6 +40,7 @@ class Strip
         '\)',
         '\[',
         '\]',
+        '\d+',
     ];
 
     protected string $ignoreRule;
